@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: guestbook-ui
-          image: registry.k8s.io/e2e-test-images/agnhost:2.39
+          image: nginx:stable
           ports:
             - containerPort: 80
           resources:
