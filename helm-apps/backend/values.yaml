@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: hashicorp/http-echo
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 5678
+  nodePort: 30001
+
+args:
+  - "-text=Hello from ArgoCD + Helm!"
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 32Mi
+  limits:
+    cpu: 100m
+    memory: 64Mi
